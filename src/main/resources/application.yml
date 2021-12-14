@@ -1,0 +1,32 @@
+security:
+  secretKey: SGBankAccountSecretKey
+  tokenExpiryInMs: '1800000'
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        jdbc:
+          lob:
+            non_contextual_creation: 'true'
+    hibernate:
+      ddl-auto: create
+    database-platform: org.h2.Driver
+  application:
+    name: bank-account-sg
+  profiles:
+    active: test
+  h2:
+    console:
+      path: /h2-console
+      enabled: 'true'
+  datasource:
+    password: sa
+    username: sa
+    url: jdbc:h2:mem:bank-db;DB_CLOSE_DELAY=-1
+server:
+  port: '8082'
+logging:
+  level:
+    root: INFO
+  file: ./log/logs.log

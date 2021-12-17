@@ -1,7 +1,2 @@
-package com.societegenerale.accounts.service;
-
-import org.springframework.security.core.userdetails.UserDetails;
-
-public interface ClientService {
-	UserDetails loadUserById(Long id);
+package com.societegenerale.accounts.service;public interface ClientService {
 }
